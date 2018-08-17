@@ -14,12 +14,8 @@ class Wasap extends CI_Controller
         $this->load->library('grocery_CRUD');
     }
 
-    public function gogo()
-    {
-        
-    }
 
-    public function manageren()
+    public function managelink()
     {
         $this->grocery_crud->set_table('tbl_ren');
 
@@ -31,7 +27,7 @@ class Wasap extends CI_Controller
     public function _e_output($output = null)
     {
         //$this->load->view('example', $output);
-        $this->load->view('ren-crud', (array)$output);
+        $this->load->view('link-crud', (array)$output);
     }
 
     function wasapto($username, $msg = NULL)
@@ -58,7 +54,7 @@ class Wasap extends CI_Controller
         $url .= '&text=';
 
         // Salam En Zulhisham (iRealty) safasf
-        $text = 'Salam ' . $ren_title . ' ' . $ren_name . ' ( iRealty )';
+        $text = 'Salam ' . $ren_title . ' ' . $ren_name . ' ( gohartanah.com )';
 
         //$text .= ' - ' . $msg;
         //$url .= rawurlencode($text);
@@ -83,8 +79,6 @@ class Wasap extends CI_Controller
         //var_dump($url);
         redirect($url);
         }
-
-        
 
     }
 }
