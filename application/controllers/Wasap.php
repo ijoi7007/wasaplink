@@ -15,7 +15,7 @@ class Wasap extends CI_Controller
     }
 
 
-    public function managelink()
+    public function manage()
     {
         $this->grocery_crud->set_table('tbl_ren');
 
