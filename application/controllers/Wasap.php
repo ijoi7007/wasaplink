@@ -17,7 +17,7 @@ class Wasap extends CI_Controller
 
     public function manage()
     {
-        $this->grocery_crud->set_table('tbl_ren');
+        $this->grocery_crud->set_table('tbl_wasap');
 
         $output = $this->grocery_crud->render();
 
@@ -43,40 +43,28 @@ class Wasap extends CI_Controller
         else
         {
             // assign detail to variable
-        //$banker_nama = $banker_row->name;
 
-        $ren_phone = $ren_row->phone;
-        $ren_name = ucwords($ren_row->name);
-        $ren_title = ucwords($ren_row->title);
+            $ren_phone = $ren_row->phone;
+            $ren_name = ucwords($ren_row->name);
+            $ren_title = ucwords($ren_row->title);
 
-        // append phone no.
-        $url .= '6' . $ren_phone;
-        $url .= '&text=';
+            // append phone no.
+            $url .= '6' . $ren_phone;
+            $url .= '&text=';
 
-        // Salam En Zulhisham (iRealty) safasf
-        $text = 'Salam ' . $ren_title . ' ' . $ren_name . ' ( gohartanah.com )';
+            // Salam En Zulhisham (iRealty) safasf
+            $text = 'Salam ' . $ren_title . ' ' . $ren_name . ' ( gohartanah.com )';
 
-        //$text .= ' - ' . $msg;
-        //$url .= rawurlencode($text);
-
-        // check custom msg
-        if (!is_null($msg)) {
-            $text .= ' - ' . $msg;
-            $url .= rawurlencode($text);
-            //var_dump($url);
-            //redirect($url);
+            // check custom msg
+            if (!is_null($msg)) {
+                $text .= ' - ' . $msg;
+                $url .= rawurlencode($text);
 
         }
         else
         {
-            // sekiranya tak de extra msg
             $url .= rawurlencode($text);
-            //var_dump($url);
-            //redirect($url);
         }
-         // send to api
-
-        //var_dump($url);
         redirect($url);
         }
 
