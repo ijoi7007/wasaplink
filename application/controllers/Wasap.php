@@ -59,14 +59,16 @@ class Wasap extends CI_Controller
             if (!is_null($msg)) {
                 $text .= ' - ' . $msg;
                 $url .= rawurlencode($text);
-
             }
             else
             {
                 $url .= rawurlencode($text);
             }
-                redirect($url);
-            }
+
+            // call function to insert wasap log
+
+            redirect($url);
+        }
     }
 }
 
