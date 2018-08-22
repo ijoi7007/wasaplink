@@ -66,7 +66,7 @@ class Wasap extends CI_Controller
             }
 
             // call function to insert wasap log
-            //this->wasaplog($username, $msg = NULL, $url);
+            $this->wasaplog($username, $msg, $url);
 
             redirect($url);
         }
@@ -74,7 +74,7 @@ class Wasap extends CI_Controller
 
     // to save wasap log for every link clicked
     // additional info -> time
-    function wasaplog($username, $msg = NULL, $url)
+    function wasaplog($username, $msg = '', $url)
     {
         // set array for data (field name, value) to insert to db
         $data_to_db = array(
@@ -83,7 +83,7 @@ class Wasap extends CI_Controller
         'trackingcode' => $msg,
         'url' => $url,
          // lawyer id to assign lawyer
-        'created_at' => now(),
+        'created_at' => date('Y-m-d H:i:s'),
         );
 
         $this->wasap_model->set_wasap_log($data_to_db);
