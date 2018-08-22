@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Wasaplog extends CI_Controller
+class Log extends CI_Controller
 {
 
     function __construct()
