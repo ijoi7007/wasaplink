@@ -27,12 +27,12 @@ class Wasap_model extends CI_Model
         }
         return NULL;
     }
-
+/*
     function set_wasap_log($data_to_db)
     {
 
         $this->db->insert('tbl_wasaplog', $data_to_db);
         return TRUE;
     }
-
+*/
 }

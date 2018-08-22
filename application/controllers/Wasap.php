@@ -66,7 +66,7 @@ class Wasap extends CI_Controller
             }
 
             // call function to insert wasap log
-            this->wasaplog($username, $msg = NULL, $url);
+            //this->wasaplog($username, $msg = NULL, $url);
 
             redirect($url);
         }
