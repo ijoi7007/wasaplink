@@ -12,6 +12,8 @@ class Wasap extends CI_Controller
         $this->load->database();
         $this->load->model('wasap_model');
         $this->load->library('grocery_CRUD');
+        $this->load->library('email');
+
     }
 
 
