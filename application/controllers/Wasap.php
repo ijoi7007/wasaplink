@@ -113,6 +113,23 @@ class Wasap extends CI_Controller
         $this->_send_mail_notification($email_from, $email_from_name, $email_to, $email_subject, $message);
 
     }
+
+    // refinance form - send email to klien, send email to admin.
+    public function _send_mail_notification($email_from, $email_from_name, $email_to, $email_subject, $message)
+    {
+
+        $this->email->from($email_from, $email_from_name);
+        $this->email->to($email_to);
+        $this->email->subject($email_subject);
+        $this->email->message($message);
+
+        // send the email
+        if (!$this->email->send()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
 
 
