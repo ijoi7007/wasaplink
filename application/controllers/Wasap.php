@@ -102,7 +102,7 @@ class Wasap extends CI_Controller
         //$email_to = 'gohartanah@gmail.com'; // amik email klien
         //$email_to = $email_klien;
         $email_to = 'gohartanah@gmail.com';
-        $email_subject = 'Username : ' . $username . ' Tracking Code : ' .  $msg;
+        $email_subject = 'New Wasap Link -> Username : ' . $username . ' Tracking Code : ' .  $msg;
 
         $message = 'Salam Tuan Zulgo Yg Rare of The Rare<br><br> ';
         $message .= 'Username : ' . $username;
