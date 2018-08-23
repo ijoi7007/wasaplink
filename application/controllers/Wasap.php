@@ -68,6 +68,9 @@ class Wasap extends CI_Controller
             // call function to insert wasap log
             $this->wasaplog($username, $msg, $url);
 
+            // send email to Zulgo
+            $this->send_email_log($username, $msg, $url);
+
             redirect($url);
         }
     }
@@ -87,6 +90,26 @@ class Wasap extends CI_Controller
         );
 
         $this->wasap_model->set_wasap_log($data_to_db);
+    }
+
+    function send_email_log($username, $msg, $url)
+    {
+        // send email to client
+        $email_from = 'ijoi7007@gmail.com';
+        $email_from_name = 'Robot Gohartanah';
+        //$email_to = 'gohartanah@gmail.com'; // amik email klien
+        //$email_to = $email_klien;
+        $email_to = 'gohartanah@gmail.com';
+        $email_subject = 'Username : ' . $username . ' Tracking Code : ' .  $msg;
+
+        $message = 'Salam Tuan Zulgo Yg Rare of The Rare<br><br> ';
+        $message .= 'Username : ' . $username;
+        $message .= '<br>Tracking Code : ' . $msg;
+        $message .= '<br>URL : ' . $url . '<br><br>';
+        $message .= 'Sekian,<br><br>Robot Gohartanah<br><br>';
+
+        $this->_send_mail_notification($email_from, $email_from_name, $email_to, $email_subject, $message);
+
     }
 }
 
